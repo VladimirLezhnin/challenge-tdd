@@ -12,41 +12,41 @@ namespace Tests
             => PostfixCalculator.Calculate(postfixExpression);
 
 
-        //[TestCase("3", ExpectedResult = "3")]
-        //[TestCase("0", ExpectedResult = "0")]
-        //[TestCase("-2", ExpectedResult = "-2")]
-        //public string T02_CanCalculateOperand(string postfixExpression)
-        //    => PostfixCalculator.Calculate(postfixExpression);
+        [TestCase("3", ExpectedResult = "3")]
+        [TestCase("0", ExpectedResult = "0")]
+        [TestCase("-2", ExpectedResult = "-2")]
+        public string T02_CanCalculateOperand(string postfixExpression)
+           => PostfixCalculator.Calculate(postfixExpression);
 
 
-        //[TestCase(null, typeof(FormatException))]
-        //public void T03_CanNotCalculateNull(string postfixExpression, Type exceptionType) =>
-        //    Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
+        [TestCase(null, typeof(FormatException))]
+        public void T03_CanNotCalculateNull(string postfixExpression, Type exceptionType) =>
+           Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
 
 
-        //[TestCase("x", typeof(FormatException))]
-        //public void T04_CanNotCalculateBadOperand(string postfixExpression, Type exceptionType) =>
-        //    Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
+        [TestCase("x", typeof(FormatException))]
+        public void T04_CanNotCalculateBadOperand(string postfixExpression, Type exceptionType) =>
+           Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
 
 
-        //[TestCase("3 2 +", ExpectedResult = "5")]
-        //[TestCase("33 22 +", ExpectedResult = "55")]
-        //[TestCase("3 -2 +", ExpectedResult = "1")]
-        //public string T05_CanCalculateSinglePlusOperation(string postfixExpression)
-        //    => PostfixCalculator.Calculate(postfixExpression);
+        [TestCase("3 2 +", ExpectedResult = "5")]
+        [TestCase("33 22 +", ExpectedResult = "55")]
+        [TestCase("3 -2 +", ExpectedResult = "1")]
+        public string T05_CanCalculateSinglePlusOperation(string postfixExpression)
+           => PostfixCalculator.Calculate(postfixExpression);
 
 
-        //[TestCase("3 2 *", ExpectedResult = "6")]
-        //[TestCase("3 2 -", ExpectedResult = "1")]
-        //[TestCase("3 5 -", ExpectedResult = "-2")]
-        //public string T06_CanCalculateSingleOtherOperation(string postfixExpression)
-        //    => PostfixCalculator.Calculate(postfixExpression);
+        [TestCase("3 2 *", ExpectedResult = "6")]
+        [TestCase("3 2 -", ExpectedResult = "1")]
+        [TestCase("3 5 -", ExpectedResult = "-2")]
+        public string T06_CanCalculateSingleOtherOperation(string postfixExpression)
+           => PostfixCalculator.Calculate(postfixExpression);
 
 
-        //[TestCase("3 2", typeof(FormatException))]
-        //[TestCase("3 2 #", typeof(FormatException))]
-        //public void T07_CanNotCalculateBadOperation(string postfixExpression, Type exceptionType) =>
-        //    Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
+        [TestCase("3 2", typeof(FormatException))]
+        [TestCase("3 2 #", typeof(FormatException))]
+        public void T07_CanNotCalculateBadOperation(string postfixExpression, Type exceptionType) =>
+           Assert.Throws(exceptionType, () => PostfixCalculator.Calculate(postfixExpression));
 
 
         //[TestCase("3 2 + 7 +", ExpectedResult = "12")]
